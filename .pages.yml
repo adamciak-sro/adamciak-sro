@@ -1,0 +1,149 @@
+media:
+  - name: images
+    label: Obrázky
+    input: assets
+    output: /assets
+    categories: [image]
+    rename: false
+
+content:
+  - name: site
+    label: Obsah webu
+    type: file
+    path: data/site.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: company
+        label: Názov firmy
+        type: string
+
+      - name: branding
+        label: Logo a titulná fotografia
+        type: object
+        fields:
+          - name: logo
+            label: Logo
+            type: image
+            options:
+              media: images
+              path: assets
+          - name: hero
+            label: Titulná fotografia
+            type: image
+            options:
+              media: images
+              path: assets
+
+      - name: about
+        label: O nás
+        type: object
+        fields:
+          - name: title
+            label: Nadpis
+            type: string
+          - name: paragraphs
+            label: Úvodné odseky
+            type: text
+            list: true
+          - name: highlight
+            label: Zvýraznený text
+            type: text
+          - name: pillars
+            label: Štyri piliere
+            type: string
+            list: true
+          - name: closing
+            label: Záverečný text
+            type: text
+          - name: signature
+            label: Podpis
+            type: string
+
+      - name: services
+        label: Služby
+        type: object
+        list:
+          collapsible: true
+          summary: "{title}"
+        fields:
+          - name: title
+            label: Názov služby
+            type: string
+          - name: details
+            label: Podrobnosti (zobrazia sa po rozkliknutí)
+            type: string
+            list: true
+
+      - name: references
+        label: Referencie
+        type: string
+        list: true
+
+      - name: contact
+        label: Kontakt
+        type: object
+        fields:
+          - name: ico
+            label: IČO
+            type: string
+          - name: icdph
+            label: IČ DPH
+            type: string
+          - name: phone
+            label: Telefón
+            type: string
+          - name: email
+            label: E-mail
+            type: string
+          - name: registered
+            label: Sídlo
+            type: string
+          - name: operation
+            label: Prevádzka
+            type: string
+          - name: hours
+            label: Otváracie hodiny
+            type: string
+          - name: map
+            label: Odkaz na mapu
+            type: string
+
+      - name: gallery
+        label: Galéria
+        type: object
+        list:
+          collapsible: true
+          summary: "Fotografia {index}"
+        fields:
+          - name: image
+            label: Fotografia
+            type: image
+            options:
+              media: images
+              path: assets/gallery
+              extensions: [jpg, jpeg, png, webp]
+
+      - name: blog
+        label: Blog / novinky
+        type: object
+        list:
+          collapsible: true
+          summary: "{title}"
+        fields:
+          - name: title
+            label: Nadpis
+            type: string
+          - name: date
+            label: Dátum
+            type: string
+          - name: body
+            label: Text
+            type: text
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user

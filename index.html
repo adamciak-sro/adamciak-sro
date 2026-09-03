@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Adamčiak s.r.o. – plyn, voda, kúrenie, tepelné čerpadlá, solárne systémy, servis a odborné prehliadky.">
+  <title>Adamčiak s.r.o. | Plyn • Voda • Kúrenie</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="nav-wrap">
+      <a class="brand" href="#top" aria-label="Adamčiak s.r.o. – domov">
+        <img src="assets/logo.png" alt="Adamčiak s.r.o.">
+      </a>
+      <button class="menu-toggle" aria-label="Otvoriť menu" aria-expanded="false">☰</button>
+      <nav class="main-nav">
+        <a href="#o-nas">O nás</a>
+        <a href="#sluzby">Služby</a>
+        <a href="#referencie">Referencie</a>
+        <a href="#galeria">Galéria</a>
+        <a href="#kontakt" class="nav-cta">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Adamčiak s.r.o.">
+      <img src="assets/hero.png" alt="Adamčiak s.r.o. – plyn, voda a kúrenie">
+    </section>
+
+    <section class="intro section">
+      <div class="container intro-grid">
+        <div>
+          <span class="eyebrow">ADAMČIAK s.r.o.</span>
+          <h1 id="about-title">Spoľahlivý partner pre plyn, vodu a kúrenie</h1>
+        </div>
+        <div id="about-copy"></div>
+      </div>
+      <div class="container pillar-row" id="pillars"></div>
+    </section>
+
+    <section class="section services-section" id="sluzby">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">ČO ROBÍME</span>
+            <h2>Naše služby</h2>
+          </div>
+          <p>Komplexné riešenia pre domácnosti, firmy aj väčšie objekty.</p>
+        </div>
+        <div class="services-grid" id="services-grid"></div>
+      </div>
+    </section>
+
+    <section class="section references-section" id="referencie">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">ZA NAMI JE PRÁCA</span>
+            <h2>Referencie</h2>
+          </div>
+          <p>Vybrané realizácie za posledné 4 roky.</p>
+        </div>
+        <div class="references-list" id="references-list"></div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="galeria">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">NAŠA PRÁCA</span>
+            <h2>Galéria</h2>
+          </div>
+          <p>Ukážky našich realizácií. Kliknutím fotografiu zväčšíte.</p>
+        </div>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </section>
+
+    <section class="section blog-section" id="blog" hidden>
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">NOVINKY</span>
+            <h2>Blog</h2>
+          </div>
+          <p>Novinky a užitočné informácie od Adamčiak s.r.o.</p>
+        </div>
+        <div class="blog-grid" id="blog-grid"></div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="kontakt">
+      <div class="container contact-grid">
+        <div>
+          <span class="eyebrow eyebrow-light">OZVITE SA NÁM</span>
+          <h2>Nezáväzne nás kontaktujte</h2>
+          <p>Radi sa s vami porozprávame o vašom projekte a navrhneme vhodné riešenie.</p>
+          <div class="contact-actions">
+            <a id="email-button" class="button button-light" href="#">Napísať e-mail</a>
+            <a id="phone-button" class="button button-outline" href="#">Zavolať</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-item">
+            <span class="contact-label">Sídlo</span>
+            <span id="registered-address"></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Prevádzka</span>
+            <a id="map-link" href="#" target="_blank" rel="noopener">I. Holdeka 29, 03401 Ružomberok <span>↗</span></a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Kontakt</span>
+            <a id="contact-email" href="#"></a>
+            <a id="contact-phone" href="#"></a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Otváracie hodiny</span>
+            <span id="hours"></span>
+          </div>
+          <div class="contact-meta">
+            <span>IČO: <strong id="ico"></strong></span>
+            <span>IČ DPH: <strong id="icdph"></strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container form-wrap">
+        <div class="form-intro">
+          <span class="eyebrow eyebrow-light">NAPÍŠTE NÁM</span>
+          <h3>Máte otázku alebo plánujete realizáciu?</h3>
+          <p>Vyplňte formulár. Po odoslaní sa otvorí váš e-mailový program s pripravenou správou.</p>
+        </div>
+        <form id="contact-form" class="contact-form">
+          <label>Meno a priezvisko<input name="name" required autocomplete="name"></label>
+          <label>E-mail<input name="email" type="email" required autocomplete="email"></label>
+          <label>Telefón<input name="phone" autocomplete="tel"></label>
+          <label>Správa<textarea name="message" rows="5" required></textarea></label>
+          <button class="button button-light" type="submit">Odoslať nezáväzný dopyt</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Adamčiak s.r.o.</span>
+      <a href="#top">Späť hore ↑</a>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Zavrieť">×</button>
+    <button class="lightbox-prev" aria-label="Predchádzajúca fotografia">‹</button>
+    <img id="lightbox-image" alt="">
+    <button class="lightbox-next" aria-label="Ďalšia fotografia">›</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
