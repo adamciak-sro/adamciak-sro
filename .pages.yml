@@ -2,13 +2,14 @@ media:
   - name: images
     label: Obrázky
     input: assets
-    output: /assets
+    output: assets
+    extensions: [jpg, jpeg, png, webp, JPG, JPEG, PNG, WEBP]
     categories: [image]
-    rename: false
+    rename: safe
 
 content:
   - name: site
-    label: Obsah webu
+    label: Nastavenie stránky
     type: file
     path: data/site.json
     format: json
@@ -18,9 +19,8 @@ content:
       - name: company
         label: Názov firmy
         type: string
-
       - name: branding
-        label: Logo a titulná fotografia
+        label: Značka a titulná fotografia
         type: object
         fields:
           - name: logo
@@ -28,14 +28,11 @@ content:
             type: image
             options:
               media: images
-              path: assets
           - name: hero
             label: Titulná fotografia
             type: image
             options:
               media: images
-              path: assets
-
       - name: about
         label: O nás
         type: object
@@ -60,27 +57,18 @@ content:
           - name: signature
             label: Podpis
             type: string
-
       - name: services
         label: Služby
         type: object
-        list:
-          collapsible: true
-          summary: "{title}"
+        list: true
         fields:
           - name: title
             label: Názov služby
             type: string
           - name: details
-            label: Podrobnosti (zobrazia sa po rozkliknutí)
+            label: Podrobnosti (rozkliknutie)
             type: string
             list: true
-
-      - name: references
-        label: Referencie
-        type: string
-        list: true
-
       - name: contact
         label: Kontakt
         type: object
@@ -92,8 +80,12 @@ content:
             label: IČ DPH
             type: string
           - name: phone
-            label: Telefón
+            label: Hlavný telefón
             type: string
+          - name: phones
+            label: Telefónne čísla
+            type: string
+            list: true
           - name: email
             label: E-mail
             type: string
@@ -109,41 +101,68 @@ content:
           - name: map
             label: Odkaz na mapu
             type: string
-
-      - name: gallery
-        label: Galéria
-        type: object
-        list:
-          collapsible: true
-          summary: "Fotografia {index}"
-        fields:
-          - name: image
-            label: Fotografia
-            type: image
-            options:
-              media: images
-              path: assets/gallery
-              extensions: [jpg, jpeg, png, webp]
-
-      - name: blog
-        label: Blog / novinky
-        type: object
-        list:
-          collapsible: true
-          summary: "{title}"
-        fields:
-          - name: title
-            label: Nadpis
+          - name: formspreeEndpoint
+            label: Formulár – technické nastavenie
             type: string
-          - name: date
-            label: Dátum
-            type: string
-          - name: body
-            label: Text
-            type: text
+          - name: socials
+            label: Sociálne siete
+            type: object
+            fields:
+              - name: facebook
+                label: Facebook
+                type: string
+              - name: instagram
+                label: Instagram
+                type: string
+
+  - name: references
+    label: Referencie
+    type: file
+    path: data/references.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Názov projektu
+        type: string
+        required: true
+      - name: description
+        label: Popis projektu
+        type: text
+      - name: images
+        label: Fotografie projektu
+        type: image
+        options:
+          media: images
+          multiple:
+            max: 30
+          unique: true
+          extensions: [jpg, jpeg, png, webp, JPG, JPEG, PNG, WEBP]
+          rename: safe
+
+  - name: blog
+    label: Blog
+    type: file
+    path: data/blog.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Nadpis článku
+        type: string
+        required: true
+      - name: date
+        label: Dátum
+        type: string
+      - name: body
+        label: Text článku
+        type: rich-text
+      - name: image
+        label: Úvodná fotografia
+        type: image
+        options:
+          media: images
 
 settings:
   content:
     merge: true
-  commit:
-    identity: user
