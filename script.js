@@ -55,6 +55,7 @@ function renderServices(services) {
   grid.innerHTML = "";
   services.forEach(service => {
     const card = el("article","service-card");
+    if ((service.title || "").toLowerCase().includes("zelená domácnostiam")) card.classList.add("green-service");
     if (!service.details || !service.details.length) {
       card.classList.add("static");
       const name = el("div","service-name");
@@ -116,12 +117,13 @@ function renderGallery(items) {
 function renderBlog(posts) {
   const section = $("#blog");
   const grid = $("#blog-grid");
-  if (!posts.length) {
-    section.hidden = true;
-    return;
-  }
   section.hidden = false;
   grid.innerHTML = "";
+  if (!posts.length) {
+    const empty = el("div", "blog-empty", "Blog pripravujeme. Už čoskoro tu nájdete novinky, rady a informácie od Adamčiak s.r.o.");
+    grid.appendChild(empty);
+    return;
+  }
   posts.forEach(post => {
     const card = el("article","blog-card");
     if (post.date) card.appendChild(el("div","blog-date",post.date));
@@ -133,15 +135,33 @@ function renderBlog(posts) {
 
 function renderContact(c) {
   const email = c.email || "";
-  const phone = c.phone || "";
+  const phones = Array.isArray(c.phones) && c.phones.length ? c.phones : (c.phone ? [c.phone] : []);
+  const phone = phones[0] || "";
   $("#registered-address").textContent = c.registered || "";
+  $("#operation-address").textContent = c.operation || "";
   $("#map-link").href = c.map || "#";
   $("#contact-email").textContent = email;
   $("#contact-email").href = email ? "mailto:" + email : "#";
-  $("#contact-phone").textContent = phone;
-  $("#contact-phone").href = phone ? "tel:" + phone.replace(/\s+/g,"") : "#";
+  const phoneBox = $("#contact-phones");
+  phoneBox.innerHTML = "";
+  phones.forEach((number, index) => {
+    const link = el("a", "contact-phone-link", number);
+    link.href = "tel:" + number.replace(/\s+/g, "");
+    phoneBox.appendChild(link);
+  });
   $("#email-button").href = email ? "mailto:" + email : "#";
   $("#phone-button").href = phone ? "tel:" + phone.replace(/\s+/g,"") : "#";
+  const socialBox = $("#social-links");
+  socialBox.innerHTML = "";
+  const socials = c.socials || {};
+  if (socials.facebook) {
+    const a = el("a", "social-link", "Facebook ↗");
+    a.href = socials.facebook; a.target = "_blank"; a.rel = "noopener noreferrer"; socialBox.appendChild(a);
+  }
+  if (socials.instagram) {
+    const a = el("a", "social-link", "Instagram ↗");
+    a.href = socials.instagram; a.target = "_blank"; a.rel = "noopener noreferrer"; socialBox.appendChild(a);
+  }
   $("#hours").textContent = c.hours || "";
   $("#ico").textContent = c.ico || "";
   $("#icdph").textContent = c.icdph || "";
