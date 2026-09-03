@@ -1,4 +1,6 @@
 const DATA_URL = "data/site.json";
+const REFERENCES_URL = "data/references.json";
+const BLOG_URL = "data/blog.json";
 let galleryItems = [];
 let currentGalleryIndex = 0;
 
@@ -14,9 +16,15 @@ function el(tag, cls, text) {
 
 async function loadSite() {
   try {
-    const response = await fetch(DATA_URL, { cache: "no-store" });
-    if (!response.ok) throw new Error("Nepodarilo sa načítať obsah.");
-    const data = await response.json();
+    const [siteResponse, refsResponse, blogResponse] = await Promise.all([
+      fetch(DATA_URL, { cache: "no-store" }),
+      fetch(REFERENCES_URL, { cache: "no-store" }),
+      fetch(BLOG_URL, { cache: "no-store" })
+    ]);
+    if (!siteResponse.ok) throw new Error("Nepodarilo sa načítať obsah.");
+    const data = await siteResponse.json();
+    data.references = refsResponse.ok ? await refsResponse.json() : (data.references || []);
+    data.blog = blogResponse.ok ? await blogResponse.json() : (data.blog || []);
     render(data);
   } catch (error) {
     console.error(error);
@@ -90,11 +98,57 @@ function renderServices(services) {
 function renderReferences(references) {
   const list = $("#references-list");
   list.innerHTML = "";
-  references.forEach(ref => {
-    const item = el("div","reference");
-    item.appendChild(el("span","",ref));
+  references.forEach((ref, index) => {
+    const item = el("button","reference");
+    item.type = "button";
+    const title = typeof ref === "string" ? ref : (ref.title || "");
+    item.appendChild(el("span","",title));
+    item.addEventListener("click", () => openReference(ref, index));
     list.appendChild(item);
   });
+}
+
+function assetPath(path) {
+  if (!path) return "";
+  return path.replace(/^\.\//, "").replace(/^\//, "");
+}
+
+function openReference(ref, index) {
+  const title = typeof ref === "string" ? ref : (ref.title || "");
+  const description = typeof ref === "string" ? "" : (ref.description || "");
+  $("#reference-modal-title").textContent = title;
+  $("#reference-modal-description").textContent = description;
+  const gallery = $("#reference-modal-gallery");
+  gallery.innerHTML = "";
+  const images = typeof ref === "object" && Array.isArray(ref.images) ? ref.images : [];
+  images.filter(Boolean).forEach((path, i) => {
+    const button = el("button", "reference-photo");
+    button.type = "button";
+    const img = document.createElement("img");
+    img.src = assetPath(path);
+    img.alt = title + " – fotografia " + (i + 1);
+    img.loading = "lazy";
+    button.appendChild(img);
+    button.addEventListener("click", () => openStandalonePhoto(img.src, img.alt));
+    gallery.appendChild(button);
+  });
+  $("#reference-modal").classList.add("show");
+  $("#reference-modal").setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closeReference() {
+  $("#reference-modal").classList.remove("show");
+  $("#reference-modal").setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+function openStandalonePhoto(src, alt) {
+  $("#lightbox-image").src = src;
+  $("#lightbox-image").alt = alt || "";
+  $("#lightbox").classList.add("show");
+  $("#lightbox").setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
 }
 
 function renderGallery(items) {
@@ -199,11 +253,13 @@ $("#lightbox").addEventListener("click", (e) => {
   if (e.target.id === "lightbox") closeLightbox();
 });
 $(".lightbox-close").addEventListener("click", closeLightbox);
+$(".reference-modal-close").addEventListener("click", closeReference);
+$(".reference-modal-backdrop").addEventListener("click", closeReference);
 $(".lightbox-next").addEventListener("click", nextPhoto);
 $(".lightbox-prev").addEventListener("click", prevPhoto);
 document.addEventListener("keydown", (e) => {
   if (!$("#lightbox").classList.contains("show")) return;
-  if (e.key === "Escape") closeLightbox();
+  if (e.key === "Escape") { closeLightbox(); closeReference(); }
   if (e.key === "ArrowRight") nextPhoto();
   if (e.key === "ArrowLeft") prevPhoto();
 });
