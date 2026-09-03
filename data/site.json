@@ -55,9 +55,7 @@
     },
     {
       "title": "Chladenie",
-      "details": [
-        "stropné chladenie"
-      ]
+      "details": []
     },
     {
       "title": "Odborné prehliadky",
@@ -69,12 +67,12 @@
     {
       "title": "Servis",
       "details": [
-        "plynové kotle Vaillant a BOSCH",
+        "plynové kotly Vaillant a BOSCH",
         "tepelné čerpadlá Vaillant, Protherm a Stiebel Eltron"
       ]
     },
     {
-      "title": "Vybavenie štátnych dotácii – zelená domáctnosť",
+      "title": "Vybavenie štátnych dotácií - Zelená domácnostiam",
       "details": [
         "solárne systémy",
         "kotle na biomasu",
@@ -105,10 +103,19 @@
     "phone": "0905625292",
     "email": "martinadamciak1@gmail.com",
     "registered": "Adamčiak, s.r.o., Liptovský Michal č.1, 034 83 Liptovský Michal",
-    "operation": "I. Holdeka 29, 03401 Ružomberok",
+    "operation": "I. Houdeka 29, 03401 Ružomberok",
     "hours": "7:00 – 15:00",
     "map": "https://www.google.com/maps/search/?api=1&query=I.+Holdeka+29%2C+03401+Ružomberok",
-    "formspreeEndpoint": ""
+    "formspreeEndpoint": "",
+    "phones": [
+      "0905625292",
+      "0908085177",
+      "0918476866"
+    ],
+    "socials": {
+      "facebook": "https://www.facebook.com/share/1D273VgNrf/",
+      "instagram": "https://www.instagram.com/adamciaks.r.o?igsi=MWRocXlxNDUxbnRyNg=="
+    }
   },
   "gallery": [
     {
