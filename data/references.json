@@ -30,10 +30,22 @@
     "title": "Rekonštrukcia vykurovania a zdravotechniky - Nemocnica AGEL, Zvolen"
   },
   {
-    "title": "Realizácia vykurovania a zdravotechniky – Bytový dom (24 b.j.), Malé Tatry, Ružomberok"
+    "title": "Realizácia vykurovania a zdravotechniky – Bytový dom (24 b.j.), Malé Tatry, Ružomberok",
+    "images": [
+      "assets/image6.jpeg",
+      "assets/IMG_20220321_090435_351.jpg",
+      "assets/20220301_100355.jpg",
+      "assets/20220301100201.jpg",
+      "assets/20220211_111904.jpg"
+    ]
   },
   {
-    "title": "Realizácia vykurovania a zdravotechniky – Bytový dom Orion (144b.j), Bystrická cesta, Ružomberok"
+    "title": "Realizácia vykurovania a zdravotechniky – Bytový dom Orion (144b.j), Bystrická cesta, Ružomberok",
+    "images": [
+      "assets/orion-ruzomberok-2025-8-1024x768.jpg",
+      "assets/IMG_20241108_123724.jpg",
+      "assets/IMG_20241108_123850.jpg"
+    ]
   },
   {
     "title": "Realizácia vykurovania, zdravotechniky a chladenia – Záchranné zdravotné stanice - Žiar nad Hronom, Nitrianske Pravno, Nová Baňa, Banská Štiavnica"
@@ -45,6 +57,9 @@
     "title": "Realizácia zdravotechniky a vykurovania - Tatry mountain resorts, a.s., Liptovský Mikuláš ( administratívna budova )"
   },
   {
-    "title": "Realizácia zdravotechniky, vykurovania a plynoinštalácie – Modernizácia Kravín Ludrová"
+    "title": "Realizácia zdravotechniky, vykurovania a plynoinštalácie – Modernizácia Kravín Ludrová",
+    "images": [
+      "assets/pd-ludrova3-scaled.jpg"
+    ]
   }
 ]
