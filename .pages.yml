@@ -7,6 +7,14 @@ media:
     categories: [image]
     rename: safe
 
+  - name: gallery
+    label: Galéria
+    input: assets/gallery
+    output: assets/gallery
+    extensions: [jpg, jpeg, png, webp, JPG, JPEG, PNG, WEBP]
+    categories: [image]
+    rename: safe
+
 content:
   - name: site
     label: Nastavenie stránky
@@ -69,6 +77,15 @@ content:
             label: Podrobnosti (rozkliknutie)
             type: string
             list: true
+      - name: gallery
+        label: Galéria
+        type: image
+        options:
+          media: gallery
+          multiple:
+            max: 100
+          unique: true
+          extensions: [jpg, jpeg, png, webp, JPG, JPEG, PNG, WEBP]
       - name: contact
         label: Kontakt
         type: object
