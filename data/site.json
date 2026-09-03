@@ -1,1 +1,179 @@
-
+{
+  "company": "ADAMČIAK s.r.o.",
+  "branding": {
+    "logo": "assets/logo.png",
+    "hero": "assets/hero.png"
+  },
+  "about": {
+    "title": "Spoľahlivý partner pre plyn, vodu a kúrenie",
+    "paragraphs": [
+      "Spoločnosť Adamčiak, s.r.o., Liptovský Michal bola založená v roku 2017.",
+      "Na trhu pôsobíme už od roku 1991 prostredníctvom súkromnej firmy Martin Adamčiak, z ktorej sme sa postupom času pretransformovali na Adamčiak, s.r.o.",
+      "Naše služby poskytujeme po celom Slovensku."
+    ],
+    "highlight": "V spoločnosti Adamčiak, s.r.o. nestaviame náš úspech na náhodách. Už viac ako 35 rokov je základom nášho podnikania pevný systém a nekompromisná kvalita, ktorú garantujeme pri každom projekte – od rodinných domov až po veľké priemyselné a medicínske komplexy.",
+    "pillars": [
+      "Poctivosť",
+      "Systém",
+      "Poriadok",
+      "Neustály vývoj"
+    ],
+    "closing": "Za našou prácou si pevne stojíme. Dovoľte nám, aby sme vás o kvalite našich služieb presvedčili priamo na vašom projekte.",
+    "signature": "Kolektív Adamčiak, s.r.o."
+  },
+  "services": [
+    {
+      "title": "Vodoinštalácia",
+      "details": []
+    },
+    {
+      "title": "Plynoinštalácia",
+      "details": []
+    },
+    {
+      "title": "Tepelné čerpadlá",
+      "details": []
+    },
+    {
+      "title": "Solárne systémy",
+      "details": []
+    },
+    {
+      "title": "Kotly",
+      "details": [
+        "elektrické",
+        "plynové",
+        "biomasa"
+      ]
+    },
+    {
+      "title": "Kúrenie",
+      "details": [
+        "podlahové",
+        "radiatory"
+      ]
+    },
+    {
+      "title": "Chladenie",
+      "details": [
+        "stropné chladenie"
+      ]
+    },
+    {
+      "title": "Odborné prehliadky",
+      "details": [
+        "plynové zariadenia",
+        "tlakové nádoby"
+      ]
+    },
+    {
+      "title": "Servis",
+      "details": [
+        "plynové kotle Vaillant a BOSCH",
+        "tepelné čerpadlá Vaillant, Protherm a Stiebel Eltron"
+      ]
+    },
+    {
+      "title": "Vybavenie štátnych dotácii – zelená domáctnosť",
+      "details": [
+        "solárne systémy",
+        "kotle na biomasu",
+        "tepelné čerpadlá"
+      ]
+    }
+  ],
+  "references": [
+    "Rekonštrukcia plynovej kotolne a vykurovania – Vodárenská spoločnosť, a.s., Ružomberok",
+    "Rekonštrukcia vykurovania a zdravotechniky - Administratívna budova SPF Trenčín",
+    "Rekonštrukcia vykurovania a zdravotechniky – Materská škola Za dráhou, Ružomberok",
+    "Rekonštrukcia vykurovania a zdravotechniky - Materská škola, Vansovej 16, Lipt. Mikuláš",
+    "Rekonštrukcia vykurovania a zdravotechniky - Základná škola, Dunajská Lužná",
+    "Realizácia zdravotechniky - Liečebno-pobytový apartmán .komplex (AD GINO Bešeňová 252 apartmánov)",
+    "Realizácia zdravotechniky - Obytný súbor \"Bella Vista\" Palúdzka Sever ( 10 bytových domov )",
+    "Rekonštrukcia plynovej kotolne , vykurovania a zdravotechniky – Polyfunkčný objekt SVI ,L. Hrádok",
+    "Rekonštrukcia vykurovania a zdravotechniky - Nemocnica AGEL, Zvolen",
+    "Realizácia vykurovania a zdravotechniky – Bytový dom (24 b.j.), Malé Tatry, Ružomberok",
+    "Realizácia vykurovania a zdravotechniky – Bytový dom Orion (144b.j), Bystrická cesta, Ružomberok",
+    "Realizácia vykurovania, zdravotechniky a chladenia – Záchranné zdravotné stanice - Žiar nad Hronom, Nitrianske Pravno, Nová Baňa, Banská Štiavnica",
+    "Realizácia zdravotechniky a vykurovania – Hotel Ski Jasná",
+    "Realizácia zdravotechniky a vykurovania - Tatry mountain resorts, a.s., Liptovský Mikuláš ( administratívna budova )",
+    "Realizácia zdravotechniky, vykurovania a plynoinštalácie – Modernizácia Kravín Ludrová"
+  ],
+  "contact": {
+    "ico": "51147815",
+    "icdph": "SK 2120614441",
+    "phone": "0905625292",
+    "email": "martinadamciak1@gmail.com",
+    "registered": "Adamčiak, s.r.o., Liptovský Michal č.1, 034 83 Liptovský Michal",
+    "operation": "I. Holdeka 29, 03401 Ružomberok",
+    "hours": "7:00 – 15:00",
+    "map": "https://www.google.com/maps/search/?api=1&query=I.+Holdeka+29%2C+03401+Ružomberok",
+    "formspreeEndpoint": ""
+  },
+  "gallery": [
+    {
+      "image": "assets/gallery/01 (1).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (2).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (3).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (4).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (5).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (6).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (7).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (8).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (9).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (10).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (11).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (12).JPG"
+    },
+    {
+      "image": "assets/gallery/01 (13).JPG"
+    },
+    {
+      "image": "assets/gallery/01 (14).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (15).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (16).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (17).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (18).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (19).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (20).jpg"
+    },
+    {
+      "image": "assets/gallery/01 (21).jpg"
+    }
+  ],
+  "blog": []
+}
