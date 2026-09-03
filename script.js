@@ -1,6 +1,7 @@
 const DATA_URL = "data/site.json";
 const REFERENCES_URL = "data/references.json";
 const BLOG_URL = "data/blog.json";
+const CACHE_BUST = "?v=" + Date.now();
 let galleryItems = [];
 let currentGalleryIndex = 0;
 
@@ -17,9 +18,9 @@ function el(tag, cls, text) {
 async function loadSite() {
   try {
     const [siteResponse, refsResponse, blogResponse] = await Promise.all([
-      fetch(DATA_URL, { cache: "no-store" }),
-      fetch(REFERENCES_URL, { cache: "no-store" }),
-      fetch(BLOG_URL, { cache: "no-store" })
+      fetch(DATA_URL + CACHE_BUST, { cache: "no-store" }),
+      fetch(REFERENCES_URL + CACHE_BUST, { cache: "no-store" }),
+      fetch(BLOG_URL + CACHE_BUST, { cache: "no-store" })
     ]);
     if (!siteResponse.ok) throw new Error("Nepodarilo sa načítať obsah.");
     const data = await siteResponse.json();
@@ -95,6 +96,17 @@ function renderServices(services) {
   });
 }
 
+function referenceImages(ref) {
+  if (!ref || typeof ref !== "object") return [];
+  const raw = Array.isArray(ref.images) ? ref.images : (ref.images ? [ref.images] : []);
+  return raw.flatMap(item => {
+    if (!item) return [];
+    if (typeof item === "string") return [item];
+    if (typeof item === "object") return [item.path, item.src, item.url, item.image].filter(Boolean);
+    return [];
+  });
+}
+
 function renderReferences(references) {
   const list = $("#references-list");
   list.innerHTML = "";
@@ -102,7 +114,15 @@ function renderReferences(references) {
     const item = el("button","reference");
     item.type = "button";
     const title = typeof ref === "string" ? ref : (ref.title || "");
-    item.appendChild(el("span","",title));
+    const titleBox = el("span", "reference-title", title);
+    item.appendChild(titleBox);
+    const count = referenceImages(ref).length;
+    if (count) {
+      const badge = el("span", "reference-photo-badge", `📷 ${count} ${count === 1 ? "fotografia" : count < 5 ? "fotografie" : "fotografií"}`);
+      item.appendChild(badge);
+      item.classList.add("has-photos");
+    }
+    item.appendChild(el("span", "reference-arrow", "›"));
     item.addEventListener("click", () => openReference(ref, index));
     list.appendChild(item);
   });
@@ -120,8 +140,11 @@ function openReference(ref, index) {
   $("#reference-modal-description").textContent = description;
   const gallery = $("#reference-modal-gallery");
   gallery.innerHTML = "";
-  const images = typeof ref === "object" && Array.isArray(ref.images) ? ref.images : [];
-  images.filter(Boolean).forEach((path, i) => {
+  const images = referenceImages(ref);
+  if (!images.length) {
+    gallery.appendChild(el("div", "reference-no-photos", "Fotografie projektu zatiaľ nie sú pridané."));
+  }
+  images.forEach((path, i) => {
     const button = el("button", "reference-photo");
     button.type = "button";
     const img = document.createElement("img");
@@ -151,15 +174,27 @@ function openStandalonePhoto(src, alt) {
   document.body.style.overflow = "hidden";
 }
 
+function normalizeGalleryItems(items) {
+  return (Array.isArray(items) ? items : []).flatMap(item => {
+    if (!item) return [];
+    if (typeof item === "string") return [{ image: item }];
+    if (typeof item === "object") {
+      const image = item.image || item.path || item.src || item.url;
+      return image ? [{ ...item, image }] : [];
+    }
+    return [];
+  });
+}
+
 function renderGallery(items) {
   const grid = $("#gallery-grid");
   grid.innerHTML = "";
-  galleryItems = items;
-  items.forEach((item, index) => {
+  galleryItems = normalizeGalleryItems(items);
+  galleryItems.forEach((item, index) => {
     const button = el("button","gallery-item");
     button.type = "button";
     const img = document.createElement("img");
-    img.src = item.image;
+    img.src = assetPath(item.image);
     img.alt = "Fotografia realizácie " + (index + 1);
     img.loading = "lazy";
     button.appendChild(img);
