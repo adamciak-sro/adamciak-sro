@@ -88,7 +88,7 @@
     "registered": "Adamčiak, s.r.o., Liptovský Michal č.1, 034 83 Liptovský Michal",
     "operation": "I. Houdeka 29, 03401 Ružomberok",
     "hours": "7:00 – 15:00",
-    "map": "https://www.google.com/maps/search/?api=1&query=I.+Holdeka+29%2C+03401+Ružomberok",
+    "map": "https://www.google.com/maps/search/?api=1&query=I.+Houdeka+29%2C+03401+Ružomberok",
     "formspreeEndpoint": "",
     "phones": [
       "0905625292",
@@ -101,69 +101,27 @@
     }
   },
   "gallery": [
-    {
-      "image": "assets/gallery/01 (1).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (2).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (3).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (4).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (5).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (6).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (7).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (8).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (9).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (10).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (11).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (12).JPG"
-    },
-    {
-      "image": "assets/gallery/01 (13).JPG"
-    },
-    {
-      "image": "assets/gallery/01 (14).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (15).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (16).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (17).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (18).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (19).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (20).jpg"
-    },
-    {
-      "image": "assets/gallery/01 (21).jpg"
-    }
+    "assets/gallery/01 (1).jpg",
+    "assets/gallery/01 (2).jpg",
+    "assets/gallery/01 (3).jpg",
+    "assets/gallery/01 (4).jpg",
+    "assets/gallery/01 (5).jpg",
+    "assets/gallery/01 (6).jpg",
+    "assets/gallery/01 (7).jpg",
+    "assets/gallery/01 (8).jpg",
+    "assets/gallery/01 (9).jpg",
+    "assets/gallery/01 (10).jpg",
+    "assets/gallery/01 (11).jpg",
+    "assets/gallery/01 (12).JPG",
+    "assets/gallery/01 (13).JPG",
+    "assets/gallery/01 (14).jpg",
+    "assets/gallery/01 (15).jpg",
+    "assets/gallery/01 (16).jpg",
+    "assets/gallery/01 (17).jpg",
+    "assets/gallery/01 (18).jpg",
+    "assets/gallery/01 (19).jpg",
+    "assets/gallery/01 (20).jpg",
+    "assets/gallery/01 (21).jpg"
   ],
   "blog": []
 }
