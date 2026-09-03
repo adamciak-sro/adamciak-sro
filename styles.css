@@ -142,3 +142,13 @@ h3{font-size:1.55rem}
   .lightbox{padding:20px}
   .lightbox-prev{left:10px}.lightbox-next{right:10px}.lightbox-close{top:10px;right:10px}
 }
+.green-service{border-color:rgba(47,132,83,.25);}
+.green-service .mark{background:#2f8453 !important;}
+.green-service button:hover{background:#f5fbf7;}
+.blog-empty{grid-column:1/-1;border:1px dashed var(--line);border-radius:16px;padding:30px;color:var(--muted);background:var(--soft);font-weight:650;}
+.contact-phones{display:flex;flex-direction:column;gap:3px;}
+.contact-phone-link{font-weight:700;text-decoration:none;}
+.contact-phone-link:hover{color:var(--red);}
+.social-links{display:flex;gap:10px;flex-wrap:wrap;padding:18px 0 4px;}
+.social-link{display:inline-flex;align-items:center;padding:9px 13px;border:1px solid var(--line);border-radius:9px;text-decoration:none;font-weight:750;font-size:.88rem;}
+.social-link:hover{background:var(--soft);color:var(--red);}
