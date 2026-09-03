@@ -23,20 +23,16 @@
   },
   "services": [
     {
-      "title": "Vodoinštalácia",
-      "details": []
+      "title": "Vodoinštalácia"
     },
     {
-      "title": "Plynoinštalácia",
-      "details": []
+      "title": "Plynoinštalácia"
     },
     {
-      "title": "Tepelné čerpadlá",
-      "details": []
+      "title": "Tepelné čerpadlá"
     },
     {
-      "title": "Solárne systémy",
-      "details": []
+      "title": "Solárne systémy"
     },
     {
       "title": "Kotly",
@@ -54,8 +50,7 @@
       ]
     },
     {
-      "title": "Chladenie",
-      "details": []
+      "title": "Chladenie"
     },
     {
       "title": "Odborné prehliadky",
@@ -89,7 +84,6 @@
     "operation": "I. Houdeka 29, 03401 Ružomberok",
     "hours": "7:00 – 15:00",
     "map": "https://www.google.com/maps/search/?api=1&query=I.+Houdeka+29%2C+03401+Ružomberok",
-    "formspreeEndpoint": "",
     "phones": [
       "0905625292",
       "0908085177",
@@ -112,8 +106,6 @@
     "assets/gallery/01 (9).jpg",
     "assets/gallery/01 (10).jpg",
     "assets/gallery/01 (11).jpg",
-    "assets/gallery/01 (12).jpg",
-    "assets/gallery/01 (13).jpg",
     "assets/gallery/01 (14).jpg",
     "assets/gallery/01 (15).jpg",
     "assets/gallery/01 (16).jpg",
@@ -121,7 +113,8 @@
     "assets/gallery/01 (18).jpg",
     "assets/gallery/01 (19).jpg",
     "assets/gallery/01 (20).jpg",
-    "assets/gallery/01 (21).jpg"
-  ],
-  "blog": []
+    "assets/gallery/01 (21).jpg",
+    "assets/gallery/03 (2).png",
+    "assets/gallery/03 (1).png"
+  ]
 }
