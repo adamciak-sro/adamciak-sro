@@ -48,7 +48,10 @@
     ]
   },
   {
-    "title": "Realizácia vykurovania, zdravotechniky a chladenia – Záchranné zdravotné stanice - Žiar nad Hronom, Nitrianske Pravno, Nová Baňa, Banská Štiavnica"
+    "title": "Realizácia vykurovania, zdravotechniky a chladenia – Záchranné zdravotné stanice - Žiar nad Hronom, Nitrianske Pravno, Nová Baňa, Banská Štiavnica",
+    "images": [
+      "assets/snimka-obrazovky-2026-09-03-150706.png"
+    ]
   },
   {
     "title": "Realizácia zdravotechniky a vykurovania – Hotel Ski Jasná"
@@ -59,7 +62,8 @@
   {
     "title": "Realizácia zdravotechniky, vykurovania a plynoinštalácie – Modernizácia Kravín Ludrová",
     "images": [
-      "assets/pd-ludrova3-scaled.jpg"
+      "assets/pd-ludrova3-scaled.jpg",
+      "assets/img20260714131629.jpg"
     ]
   }
 ]
