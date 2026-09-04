@@ -178,3 +178,37 @@ h3{font-size:1.55rem}
 .green-service .plus{color:#fff;}
 .green-service .service-details{background:#2f8453;color:#fff;}
 .green-service .service-details ul{color:#fff;}
+/* Google hodnotenie */
+.google-review {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.google-review-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 35px 30px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+}
+
+.google-review-content h3 {
+  margin: 10px 0 12px;
+  font-size: 28px;
+}
+
+.google-review-content p {
+  max-width: 600px;
+  margin: 0 auto 24px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.google-review-content .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
